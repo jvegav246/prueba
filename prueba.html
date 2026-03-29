@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Horario</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    table {
+      width: 80%;
+      border-collapse: collapse;
+      margin: auto;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f3f3f3;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 style="text-align: center;">Horario</h1>
+  <div id="horario"></div>
+
+  <script>
+    const data = [
+      {
+        dia: 14,
+        mes: 4,
+        bloques: {
+          "08:00 a 09:00": "juan perez",
+          "09:00 a 10:00": "carlos perez",
+          "10:00 a 11:00": "carlos gonzalez",
+          "11:00 a 12:00": "carlos gonzalez",
+          "12:00 a 13:00": "carlos gonzalez",
+          "13:00 a 14:00": "carlos gonzalez",
+          "14:00 a 15:00": "carlos gonzalez",
+          "15:00 a 16:00": "carlos gonzalez",
+          "15:00 a 16:00": "carlos gonzalez",
+          "16:00 a 17:00": "carlos gonzalez",
+          "17:00 a 18:00": "carlos gonzalez",
+          "18:00 a 19:00": "carlos gonzalez",
+        },
+      },
+      {
+        dia: 15,
+        mes: 4,
+        bloques: {
+          "08:00 a 09:00": "juan perez",
+          "09:00 a 10:00": "carlos perez",
+          "10:00 a 11:00": "carlos gonzalez",
+          "11:00 a 12:00": "carlos gonzalez",
+          "12:00 a 13:00": "carlos gonzalez",
+          "13:00 a 14:00": "carlos gonzalez",
+          "14:00 a 15:00": "carlos gonzalez",
+          "15:00 a 16:00": "carlos gonzalez",
+          "15:00 a 16:00": "carlos gonzalez",
+          "16:00 a 17:00": "carlos gonzalez",
+          "17:00 a 18:00": "carlos gonzalez",
+          "18:00 a 19:00": "carlos gonzalez",
+        },
+      },
+      {
+        dia: 16,
+        mes: 4,
+        bloques: {
+          "08:00 a 09:00": "juan perez",
+          "09:00 a 10:00": "carlos perez",
+          "10:00 a 11:00": "carlos gonzalez",
+          "11:00 a 12:00": "carlos gonzalez",
+          "12:00 a 13:00": "carlos gonzalez",
+          "13:00 a 14:00": "carlos gonzalez",
+          "14:00 a 15:00": "carlos gonzalez",
+          "15:00 a 16:00": "carlos gonzalez",
+          "15:00 a 16:00": "carlos gonzalez",
+          "16:00 a 17:00": "carlos gonzalez",
+          "17:00 a 18:00": "carlos gonzalez",
+          "18:00 a 19:00": "carlos gonzalez",
+        },
+      },
+      {
+        dia: 17,
+        mes: 4,
+        bloques: {
+          "08:00 a 09:00": "juan perez",
+          "09:00 a 10:00": "carlos perez",
+          "10:00 a 11:00": "carlos gonzalez",
+          "11:00 a 12:00": "carlos gonzalez",
+          "12:00 a 13:00": "carlos gonzalez",
+          "13:00 a 14:00": "carlos gonzalez",
+          "14:00 a 15:00": "carlos gonzalez",
+          "15:00 a 16:00": "carlos gonzalez",
+          "15:00 a 16:00": "carlos gonzalez",
+          "16:00 a 17:00": "carlos gonzalez",
+          "17:00 a 18:00": "carlos gonzalez",
+          "18:00 a 19:00": "carlos gonzalez",
+        },
+      },
+      {
+        dia: 18,
+        mes: 4,
+        bloques: {
+          "08:00 a 09:00": "juan perez",
+          "09:00 a 10:00": "carlos perez",
+          "10:00 a 11:00": "carlos gonzalez",
+          "11:00 a 12:00": "carlos gonzalez",
+          "12:00 a 13:00": "carlos gonzalez",
+          "13:00 a 14:00": "carlos gonzalez",
+          "14:00 a 15:00": "carlos gonzalez",
+          "15:00 a 16:00": "carlos gonzalez",
+          "15:00 a 16:00": "carlos gonzalez",
+          "16:00 a 17:00": "carlos gonzalez",
+          "17:00 a 18:00": "carlos gonzalez",
+          "18:00 a 19:00": "carlos gonzalez",
+        },
+      },
+      {
+        dia: 19,
+        mes: 4,
+        bloques: {
+          "08:00 a 09:00": "juan perez",
+          "09:00 a 10:00": "carlos perez",
+          "10:00 a 11:00": "carlos gonzalez",
+          "11:00 a 12:00": "carlos gonzalez",
+          "12:00 a 13:00": "carlos gonzalez",
+          "13:00 a 14:00": "carlos gonzalez",
+          "14:00 a 15:00": "carlos gonzalez",
+          "15:00 a 16:00": "carlos gonzalez",
+          "15:00 a 16:00": "carlos gonzalez",
+          "16:00 a 17:00": "carlos gonzalez",
+          "17:00 a 18:00": "carlos gonzalez",
+          "18:00 a 19:00": "carlos gonzalez",
+        },
+      },
+      {
+        dia: 20,
+        mes: 4,
+        bloques: {
+          "08:00 a 09:00": "juan perez",
+          "09:00 a 10:00": "carlos perez",
+          "10:00 a 11:00": "carlos gonzalez",
+          "11:00 a 12:00": "carlos gonzalez",
+          "12:00 a 13:00": "carlos gonzalez",
+          "13:00 a 14:00": "carlos gonzalez",
+          "14:00 a 15:00": "carlos gonzalez",
+          "15:00 a 16:00": "carlos gonzalez",
+          "15:00 a 16:00": "carlos gonzalez",
+          "16:00 a 17:00": "carlos gonzalez",
+          "17:00 a 18:00": "carlos gonzalez",
+          "18:00 a 19:00": "carlos gonzalez",
+        },
+      },
+    ];
+
+    const contenedor = document.getElementById('horario');
+
+    // Obtener todas las horas únicas
+    const horas = new Set();
+    data.forEach(d => {
+      Object.keys(d.bloques).forEach(h => horas.add(h));
+    });
+
+    const horasOrdenadas = Array.from(horas).sort();
+
+    // Crear tabla
+    const tabla = document.createElement('table');
+
+    // Encabezado
+    const header = document.createElement('tr');
+    header.innerHTML = `<th>Hora</th>`;
+    data.forEach(d => {
+      header.innerHTML += `<th>Día ${d.dia} / Mes ${d.mes}</th>`;
+    });
+    tabla.appendChild(header);
+
+    // Filas por hora
+    horasOrdenadas.forEach(hora => {
+      const fila = document.createElement('tr');
+      fila.innerHTML = `<td>${hora}</td>`;
+
+      data.forEach(d => {
+        const nombre = d.bloques[hora] || '';
+        fila.innerHTML += `<td>${nombre}</td>`;
+      });
+
+      tabla.appendChild(fila);
+    });
+
+    contenedor.appendChild(tabla);
+  </script>
+
+</body>
+</html>
